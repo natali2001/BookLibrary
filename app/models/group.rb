@@ -1,6 +1,6 @@
-class Group < ActiveRecord::Base
-  validates :name, presence: true
+class Group < ApplicationRecord
+    validates :name, presence: true
 
-  has_many :book_groups, dependent: :destroy
-  has_many :books, through: :book_groups
+    has_many :book_authors, dependent: :destroy
+    has_many :books, through: :book_authors
 end
