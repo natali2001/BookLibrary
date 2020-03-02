@@ -6,5 +6,5 @@ class Book < ApplicationRecord
     has_many :authors, through: :book_authors
     has_many :groups, through: :book_groups
   
-    #mount_base64_uploader :thumbnail, PictureUploader
+  #  mount_uploader :image, ImageUploader
 end
