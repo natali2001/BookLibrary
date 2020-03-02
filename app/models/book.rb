@@ -6,5 +6,27 @@ class Book < ApplicationRecord
     has_many :authors, through: :book_authors
     has_many :groups, through: :book_groups
   
-    #mount_base64_uploader :thumbnail, PictureUploader
+    mount_uploader :image, ImageUploader
+
+    def all_groups
+        self.groups.map(&:name).join(', ')
+      end
+    
+    def all_groups=(names)
+        self.groups = names.split(',').map do |name|
+        Group.where(name: name.strip).first_or_create!
+    end
+
+    end
+    
+    
+    def all_authors
+        self.authors.map(&:name).join(', ')
+    end
+
+    def all_authors=(names)
+        self.authors = names.split(',').map do |name|
+        Author.where(name: name.strip).first_or_create!
+    end
+    end
 end
