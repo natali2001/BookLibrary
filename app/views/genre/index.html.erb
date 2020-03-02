@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<% @groups.each do |group| %>
+  <h3><%=  group.name %></h3>
+<% group.books.each do |book| %>
+  <h3><%=  book.title %></h3>
+  <h3><%= image_tag book.image %></h3>
+<% end %>
+<% end %>
+</body>
+</html>
