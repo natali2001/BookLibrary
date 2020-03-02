@@ -7,7 +7,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(book_param)
+    @book = Book.new(book_params)
     @book.save
 
     flash[:notice] = 'Book added'
@@ -46,7 +46,7 @@ class BooksController < ApplicationController
 
   private
     def book_params
-      params.require(:book).permit(:title, :group_id, :author_id, :image)
+      params.require(:book).permit(:title, :all_groups, :all_authors, :image)
   end
 
 end
