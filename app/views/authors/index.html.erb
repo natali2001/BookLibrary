@@ -6,11 +6,16 @@
 
 </head>
 <body>
-<%=link_to "New Author", new_author_path %>
-<div class="row">
-<% @authors.each do |author| %>
-    <h3><%= author.name %></h3>
-<% end %>
+<div class="authors-index">
+  <% @authors.each_slice(8) do |author| %>
+    <div class="row">
+      <% author.each do |author| %>
+        <div class="col-md-3 col-sm-3">
+          <h3><%= author.name%></h3>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 </body>
 </html>
