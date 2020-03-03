@@ -23,8 +23,10 @@ Rails.application.routes.draw do
   get 'group' => 'genre#index'
 
   get 'books' => 'books#index'
+  get 'authors' => 'authors#index'
 
   resources :books
   resources :authors
+
 
 end
