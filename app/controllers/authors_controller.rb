@@ -3,7 +3,6 @@ class AuthorsController < ApplicationController
 
   def index
     @authors = Author.all
-    @books = Book.all
   end
 
   def create
@@ -17,19 +16,16 @@ class AuthorsController < ApplicationController
 
   def new
     @author = Author.new
-    @book = Book.new
-    @group = Group.new
   end
 
   def show
-    @authors = Author.all
-    @books = Book.all
-
   end
 
   def update
     @author = Author.find(params[:id])
     @author.update(author_params)
+
+    redirect_to authors_path
   end
 
   def edit
@@ -47,9 +43,10 @@ class AuthorsController < ApplicationController
 
   private
   def author_params
-    params.require(:author).permit(:name, :all_groups, :all_books)
+    params.require(:author).permit(:name,)
   end
 
 end
+
 
 
