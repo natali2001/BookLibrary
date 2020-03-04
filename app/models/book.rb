@@ -8,6 +8,8 @@ class Book < ApplicationRecord
   
     mount_uploader :image, ImageUploader
 
+    accepts_nested_attributes_for :authors
+
     def all_groups
         self.groups.map(&:name).join(', ')
       end
