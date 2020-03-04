@@ -1,0 +1,10 @@
+# config/cloudinary.yml
+development:
+  cloud_name: "dcusxtcig"
+  api_key: "565462868742385"
+  api_secret: "MILoIYUuKUIozcXX67_SGElga6c"
+
+production:
+  cloud_name: "dcusxtcig"
+  api_key: "565462868742385"
+  api_secret: "MILoIYUuKUIozcXX67_SGElga6c"
