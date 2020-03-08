@@ -28,11 +28,11 @@
           <a class="nav-link" href="http://127.0.0.1:3000/books">Книги</a>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Жанры<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Добавить<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="http://127.0.0.1:3000/authors/new">Добавить автора</a></li>
-            <li><a href="http://127.0.0.1:3000/books/new">Добавить книгу</a></li>
-            <li><a href="http://127.0.0.1:3000/groups/new">Добавить жанр</a></li>
+            <li><%= link_to "Добавить автора", new_author_path %></li>
+            <li><%= link_to "Добавить книгу", new_book_path %></li>
+            <li><%= link_to "Добавить группу", new_group_path %></li>
           </ul>
         </li>
       </ul>
