@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get 'books' => 'books#index'
   get 'authors' => 'authors#index'
 
+  root 'pages#home'
+
   resources :books
   resources :authors
   resources :groups
